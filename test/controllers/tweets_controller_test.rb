@@ -3,7 +3,7 @@ require 'test_helper'
 class TweetsControllerTest < ActionController::TestCase
   include Devise::TestHelpers
 
-  test 'redirects to login page ' do
+  test 'should redirects guest users to login page' do
     get :index
     assert_redirected_to new_user_session_path
   end
@@ -13,5 +13,11 @@ class TweetsControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert assigns['tweets'].count, 1
+  end
+
+  test 'should render custom views when "user is not found"' do
+    sign_in users(:one)
+    get :index, handle: 'not-exists'
+    assert_template :user_not_found
   end
 end

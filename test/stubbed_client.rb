@@ -1,7 +1,8 @@
 require 'ostruct'
 
 class FakeTimeLine
-  def user_timeline(_user, *_args)
+  def user_timeline(user, *_args)
+    fail Twitter::Error::NotFound if user == 'not-exists'
     [FakeTweet.new]
   end
 end

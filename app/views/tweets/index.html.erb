@@ -1,4 +1,12 @@
-<h1>Tweets</h1>
+<%= content_tag :h1 do %>
+  <% if @handle %>
+    Tweets for <%= @handle %>
+  <% else %>
+    Enter a twitter username
+  <% end %>
+<% end %>
+
+<%= render 'search' %>
 
 <% @tweets.each do |tweet| %>
   <%= content_tag :p, tweet.text %>
