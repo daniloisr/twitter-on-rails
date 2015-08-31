@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: pg
+  password: pg
+
+development:
+  <<: *default
+  database: stacksocial_twitter
+
+test:
+  <<: *default
+  database: stacksocial_twitter_test
+
+production:
+  <<: *default
+  database: stacksocial_twitter_production
