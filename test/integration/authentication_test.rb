@@ -9,6 +9,7 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
     fill_in 'Email', with: 'user@user.com'
     fill_in 'Password', with: 'pass'
     fill_in 'Password confirmation', with: 'pass'
+
     click_button 'Sign up'
 
     assert_page_has_content 'You have signed up successfully'

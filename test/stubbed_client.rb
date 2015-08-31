@@ -7,9 +7,19 @@ class FakeTimeLine
   end
 end
 
+class FakeUser
+  def profile_image_url
+    ''
+  end
+end
+
 class FakeTweet
   def text
     'Fake Tweet =)'
+  end
+
+  def user
+    FakeUser.new
   end
 end
 

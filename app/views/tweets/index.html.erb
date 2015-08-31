@@ -1,13 +1,10 @@
 <%= content_tag :h1 do %>
-  <% if @handle %>
-    Tweets for <%= @handle %>
-  <% else %>
-    Enter a twitter username
-  <% end %>
+  <%= image_tag @tweets.first.user.profile_image_url %>
+  @<%= @handle %> Latest Tweets
 <% end %>
 
 <%= render 'search' %>
 
-<% @tweets.each do |tweet| %>
-  <%= content_tag :p, tweet.text %>
-<% end %>
+<ul class="tweets">
+  <%= render partial: 'tweet', collection: @tweets, as: :tweet %>
+</ul>
