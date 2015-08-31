@@ -12,5 +12,6 @@ class TweetsControllerTest < ActionController::TestCase
     sign_in users(:one)
     get :index
     assert_response :success
+    assert assigns['tweets'].count, 1
   end
 end

@@ -18,4 +18,4 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
-gem 'capybara', group: :test
+gem 'capybara_minitest_spec', group: :test

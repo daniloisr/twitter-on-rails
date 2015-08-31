@@ -1,8 +1,6 @@
 require 'test_helper'
 
 class AuthenticationTest < ActionDispatch::IntegrationTest
-  include Capybara::DSL
-  
   test 'sign up' do
     visit root_path
 
@@ -13,6 +11,6 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
     fill_in 'Password confirmation', with: 'pass'
     click_button 'Sign up'
 
-    assert page.has_content?('You have signed up successfully')
+    assert_page_has_content 'You have signed up successfully'
   end
 end
