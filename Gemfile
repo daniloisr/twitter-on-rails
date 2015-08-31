@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.3'
 gem 'pg'
 gem 'devise'
+gem 'twitter'
 
 gem 'rails_12factor', group: :production
 
@@ -14,6 +15,7 @@ gem 'turbolinks'
 group :development, :test do
   gem 'byebug'
   gem 'spring'
+  gem 'dotenv-rails'
 end
 
 gem 'capybara', group: :test
