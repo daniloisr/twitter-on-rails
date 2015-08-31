@@ -18,6 +18,10 @@ class FakeTweet
     'Fake Tweet =)'
   end
 
+  def created_at
+    DateTime.now
+  end
+
   def user
     FakeUser.new
   end
