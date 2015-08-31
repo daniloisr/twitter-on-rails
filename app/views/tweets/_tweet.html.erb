@@ -1,3 +1,4 @@
 <%= content_tag :li, class: 'tweet' do %>
   <%= tweet_with_mentions(tweet.text) %>
+  <%= content_tag :small, l(tweet.created_at, format: :short) %>
 <% end %>

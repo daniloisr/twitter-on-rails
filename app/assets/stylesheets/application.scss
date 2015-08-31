@@ -50,4 +50,11 @@
   padding: 1em 0em;
   list-style: none;
   border-bottom: 1px solid black;
+
+  small {
+    margin-top: .6em;
+    font-size: .8em;
+    display: block;
+    color: #aaa;
+  }
 }
