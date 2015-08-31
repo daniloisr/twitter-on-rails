@@ -1,4 +1,5 @@
-<h1>Tweets#index</h1>
-<p>Find me in app/views/tweets/index.html.erb</p>
+<h1>Tweets</h1>
 
-<%= @tweets.count %>
+<% @tweets.each do |tweet| %>
+  <%= content_tag :p, tweet.text %>
+<% end %>
